@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ html_title }}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ project_name }}</h1>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                {% for module in modules %}
+                <li>
+                    <a href="#{{ module.id }}">{{ module.name }}</a>
+                    {% if module.functions %}
+                    <ul>
+                        {% for func in module.functions %}
+                        <li><a href="#{{ func.id }}">{{ func.name }}()</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% for module in modules %}
+        <div class="module-block" id="{{ module.id }}">
+            <h1>Module: {{ module.name }}</h1>
+
+            {% if module.author %}<p class="author"><strong>Author:</strong> {{ module.author | join('') | trim }}</p>{%
+            endif %}
+
+            {% if module.description %}
+            <div class="module-description">
+                <h3>Description</h3>
+                <pre>{{ module.description | join('') | trim | e }}</pre>
+            </div>
+            {% endif %}
+
+            {% if module.usage %}
+            <div class="module-usage">
+                <h3>Usage</h3>
+                <pre><code>{{ module.usage | join('') | trim | e }}</code></pre>
+            </div>
+            {% endif %}
+
+            {% if module.functions %}
+            <div class="functions-container">
+                <h3>Functions</h3>
+                {% for func in module.functions %}
+                <div class="function-block" id="{{ func.id }}">
+                    <h2><code>{{ func.name | e }}()</code></h2>
+                    <pre>{{ func.description | join('') | e }}</pre>
+
+                    {% if func.arg %}
+                    <h4>Arguments</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for arg in func.arg %}
+                            <tr>
+                                <td><code>{{ arg.name | e }}</code></td>
+                                <td><i>{{ arg.type | e }}</i></td>
+                                <td>{{ arg.description | e }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+
+                    {% if func.globals %}
+                    <h4>Global Variables</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for global in func.globals %}
+                            <tr>
+                                <td><code>{{ global.name | e }}</code></td>
+                                <td><i>{{ global.type | e }}</i></td>
+                                <td>{{ global.description | e }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+
+                    {% if func.example %}
+                    <h4>Example</h4>
+                    <pre><code>{{ func.example | join('') | trim | e }}</code></pre>
+                    {% endif %}
+
+                    {% if func.returns %}
+                    <h4>Returns</h4>
+                    <p class="returns">{{ func.returns | join('') | e }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

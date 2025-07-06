@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Project</h1>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li>
+                    <a href="#example_2sh-edge-case-examples">Edge Case Examples</a>
+                    <ul>
+                        <li><a href="#example_2sh-edge-case-examples-standard-function">standard-function()</a></li>
+                        <li><a href="#example_2sh-edge-case-examples-_internal_helper">_internal_helper()</a></li>
+                        <li><a href="#example_2sh-edge-case-examples-run_complex_example">run_complex_example()</a></li>
+                        <li><a href="#example_2sh-edge-case-examples-function_with_empty_doc">function_with_empty_doc()</a></li>
+                        <li><a href="#example_2sh-edge-case-examples-function_with_empty_return_tag">function_with_empty_return_tag()</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#examplesh-file-utilities">File Utilities</a>
+                    <ul>
+                        <li><a href="#examplesh-file-utilities-create_directory">create_directory()</a></li>
+                        <li><a href="#examplesh-file-utilities-file_exists">file_exists()</a></li>
+                        <li><a href="#examplesh-file-utilities-log-message">log-message()</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="module-block" id="example_2sh-edge-case-examples">
+            <h1>Module: Edge Case Examples</h1>
+
+<p class="author"><strong>Author:</strong> John Doe</p>
+            <div class="module-description">
+                <h3>Description</h3>
+                <pre>This script is designed to show edge cases for the bashdog parser.
+
+
+
+It includes:
+
+- Functions with no documentation.
+
+- Documentation blocks that are empty or have missing tags.
+
+- Functions with special characters in their names.
+
+- Multi-line example blocks.</pre>
+            </div>
+
+
+            <div class="functions-container">
+                <h3>Functions</h3>
+                <div class="function-block" id="example_2sh-edge-case-examples-standard-function">
+                    <h2><code>standard-function()</code></h2>
+                    <pre>
+A standard, well-formed function to establish a baseline.</pre>
+
+                    <h4>Arguments</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>$1</code></td>
+                                <td><i>string</i></td>
+                                <td>The input value.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                    <h4>Returns</h4>
+                    <p class="returns">{string} The processed value.</p>
+                </div>
+                <div class="function-block" id="example_2sh-edge-case-examples-_internal_helper">
+                    <h2><code>_internal_helper()</code></h2>
+                    <pre>A function with an underscore in its name.</pre>
+
+
+
+
+                </div>
+                <div class="function-block" id="example_2sh-edge-case-examples-run_complex_example">
+                    <h2><code>run_complex_example()</code></h2>
+                    <pre>
+This function has a multi-line example.</pre>
+
+
+
+                    <h4>Example</h4>
+                    <pre><code># First, set a variable
+VAR=&#34;hello&#34;
+# Then, run the function
+run_complex_example &#34;$VAR&#34;</code></pre>
+
+                </div>
+                <div class="function-block" id="example_2sh-edge-case-examples-function_with_empty_doc">
+                    <h2><code>function_with_empty_doc()</code></h2>
+                    <pre>This block is empty.</pre>
+
+
+
+
+                </div>
+                <div class="function-block" id="example_2sh-edge-case-examples-function_with_empty_return_tag">
+                    <h2><code>function_with_empty_return_tag()</code></h2>
+                    <pre>This function has a returns tag with no description.</pre>
+
+
+
+
+                    <h4>Returns</h4>
+                    <p class="returns"></p>
+                </div>
+            </div>
+        </div>
+        <div class="module-block" id="examplesh-file-utilities">
+            <h1>Module: File Utilities</h1>
+
+<p class="author"><strong>Author:</strong> Your Name</p>
+            <div class="module-description">
+                <h3>Description</h3>
+                <pre>A collection of utility functions for handling files and directories.
+
+This module demonstrates various documentation features.
+
+
+
+Key Features:
+
+- Creating directories.
+
+- Checking file existence.
+
+- Logging messages.</pre>
+            </div>
+
+
+            <div class="functions-container">
+                <h3>Functions</h3>
+                <div class="function-block" id="examplesh-file-utilities-create_directory">
+                    <h2><code>create_directory()</code></h2>
+                    <pre>
+Creates a directory if it does not already exist. This function uses the
+full &#39;function&#39; keyword syntax.
+</pre>
+
+                    <h4>Arguments</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>$1</code></td>
+                                <td><i>string</i></td>
+                                <td>The message to log. This can also be something else.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Global Variables</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>CUSTOM_FLAG</code></td>
+                                <td><i>array</i></td>
+                                <td>Additional custom flags for the function.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Example</h4>
+                    <pre><code>create_directory &#34;/tmp/my-new-folder&#34;</code></pre>
+
+                    <h4>Returns</h4>
+                    <p class="returns">
+None. This function only performs an action.</p>
+                </div>
+                <div class="function-block" id="examplesh-file-utilities-file_exists">
+                    <h2><code>file_exists()</code></h2>
+                    <pre>
+Checks if a file exists. This demonstrates the function syntax
+without the &#39;function&#39; keyword.
+</pre>
+
+                    <h4>Arguments</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>$1</code></td>
+                                <td><i>string</i></td>
+                                <td>The path to the file to check.</td>
+                            </tr>
+                            <tr>
+                                <td><code>$2</code></td>
+                                <td><i>string</i></td>
+                                <td>The path to the file to check.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                    <h4>Returns</h4>
+                    <p class="returns">
+0 if the file exists, 1 otherwise.</p>
+                </div>
+                <div class="function-block" id="examplesh-file-utilities-log-message">
+                    <h2><code>log-message()</code></h2>
+                    <pre>
+Logs a message to the console with a timestamp. This function
+demonstrates a name with hyphens.
+</pre>
+
+                    <h4>Arguments</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>$1</code></td>
+                                <td><i>string</i></td>
+                                <td>The message to log.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Global Variables</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>DEBUG_MODE</code></td>
+                                <td><i>boolean</i></td>
+                                <td>If true, logs verbose messages.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Example</h4>
+                    <pre><code>log-message &#34;Initialization complete.&#34;</code></pre>
+
+                    <h4>Returns</h4>
+                    <p class="returns">
+None. Echos the formatted message to stdout.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

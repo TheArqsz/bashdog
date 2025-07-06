@@ -1,0 +1,9 @@
+examples/
+.github/
+assets/
+README.md
+CHANGELOG.md
+.venv/
+bashdog.egg*
+build/
+**/__pycache__

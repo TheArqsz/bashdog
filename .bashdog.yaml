@@ -1,0 +1,62 @@
+# ------------------------------------------------------------------------------
+# bashdog Configuration File
+# ------------------------------------------------------------------------------
+# This file controls the behavior of the documentation generator.
+# Copy this file to `.bashdog.yaml` in your project root and customize it.
+
+# (Required) The name of your project.
+# This will be used as the main title in the generated documentation.
+# project_name: "My Awesome Bash Project"
+
+# (Optional) The path to the directory containing your Bash source files.
+# It can be a relative path (from the project root) or an absolute path.
+# source_directory: "./scripts"
+
+# (Optional) The directory where the generated documentation will be saved.
+# Defaults to "./docs" if not specified.
+# output_directory: "./docs"
+
+# (Optional) A list of file extensions to scan for documentation.
+# The tool will only process files ending with these extensions.
+# Defaults to [".sh", ".bash"] if not specified.
+# file_extensions:
+#   - ".sh"
+#   - ".bash"
+
+# (Optional) The title for the generated HTML page's <title> tag.
+# If omitted, the `project_name` will be used.
+# html_title: "My Awesome Bash Framework - API Documentation"
+
+# (Optional) A list of files or directories to exclude from processing.
+# This supports glob-style patterns (wildcards). The paths are relative
+# to the `source_directory`.
+# exclude:
+#   - "*/*install.sh"
+
+
+# --- Parser Configuration ---------------------------------------------------
+# This section defines how bashdog identifies documentation blocks.
+parsers:
+  # (Required) The character or string that prefixes documentation tags.
+  # For example, with "@", tags will look like @description, @arg, etc.
+  tag_prefix: "@"
+  
+  # Configuration for identifying module-level documentation blocks.
+  module:
+    # Defines the visual style of the separator lines that enclose a module block.
+    # This is more flexible than using exact start/end markers.
+    style:
+      # The character that makes up the separator line (e.g., "=", "*", "-").
+      char: "="
+      # The minimum number of times the character must repeat to be considered
+      # a valid separator line.
+      min_length: 10
+  
+  # Configuration for identifying function-level documentation blocks.
+  function:
+    # The exact string that marks the beginning of a function's doc block.
+    start_marker: "##!"
+    # (Optional) The exact string that marks the end of a function's doc block.
+    # If your doc blocks are always immediately followed by the function
+    # definition, you can omit this.
+    end_marker: "#'"

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bashdog"
+version = "1.0.0"
+authors = [
+  { name="Arqsz", email="contact@arqsz.net" },
+]
+description = "A modern, configurable documentation generator for Bash frameworks."
+readme = "README.md"
+requires-python = ">=3.8"
+license-files = ["LICENSE"]
+keywords = ["bash", "documentation", "generator", "shell", "devops", "docs"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "Jinja2>=3.0",
+    "PyYAML>=6.0",
+    "Markdown>=3.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/TheArqsz/bashdog"
+"Bug Tracker" = "https://github.com/TheArqsz/bashdog/issues"
+
+[project.scripts]
+bashdog = "bashdog.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+bashdog = ["templates/**/*"]
